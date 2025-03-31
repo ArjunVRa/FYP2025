@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/ututbe.css')}}">
+	<link rel="icon" style=" border-radius: 18px;" href="../img/WhatsApp Image 2023-09-12 at 8.50.21 AM.jpeg" type="image/x-icon">
+
+	<title>Tech Creed</title>
+</head>
+<body>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Alkatra&family=Nunito:wght@300&family=Ubuntu&display=swap');
+		*{
+			font-family: 'Alegreya', serif;
+font-family: 'Alkatra', cursive;
+font-family: 'Nunito', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+		}
+	
+#utube-cnt {
+  padding: 20px; /* Add padding for spacing */
+  background-color:#fff;
+  color: #E8FFF7 ;
+  text-align: center; /* Set a background color */
+ 
+}
+
+.card {
+  background-color: #fff; /* Set card background color */
+  border: 1px solid #fff; /* Add a border to the card */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  padding: 20px; /* Add padding inside the card */
+  margin: 20px;
+  width: 100%;
+  text-align: center; /* Add margin to space the card from other elements */
+}
+
+/* Style for the h1 headings in the main content */
+#utube-cnt h1 {
+  font-size: 24px; /* Set the font size */
+  color:  #213b52; /* Set the text color */
+}
+
+/* Style for the form elements in the main content */
+#utube-cnt form {
+  margin-top: 20px; 
+  /* Add margin to separate form from other elements */
+}
+
+/* Style for the form labels */
+
+
+/* Style for input fields in the form */
+#utube-cnt input[type="text"] {
+  width: 70%; /* Make the input field full-width */
+  padding: 10px; /* Add padding for input field */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+}
+.result-container h1{
+	padding-bottom: 1.5rem;
+}
+
+/* Style for the submit button in the form */
+#utube-cnt button[type="submit"] {
+  background-color:  #F3A94D; /* Set a background color for the button */
+  color: #fff; /* Set text color for the button */
+  padding: 10px 20px; /* Add padding to the button */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer;
+  align-items: center;
+  margin-top: 1rem; /* Add a pointer cursor */
+}
+
+/* Style for the YouTube Sentiment Analysis Results section */
+#content h1 {
+  font-size: 24px; /* Set the font size */
+   /* Set the text color */
+  text-align: center;
+
+}
+
+#utube-result {
+            background-color: #213b52;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 500px;
+            margin: 20px auto;
+            color: #fff;
+        }
+
+        /* Style for the paragraphs in the YouTube Sentiment Analysis Results section */
+        #utube-result p {
+            font-size: 16px; /* Set the font size */
+            line-height: 1.5; /* Set the line height for readability */
+            color: #E8FFF7; /* Set the text color */
+        }
+.result-container {
+            background-color: #213b52;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width:500px;
+            margin: 20px auto;
+            color: #fff;
+        }
+
+        .negative-sentence-container {
+    max-height: 150px; /* Adjust the maximum height as needed */
+    overflow: auto; /* Add scroll when content exceeds the maximum height */
+    margin-top: 10px; /* Add margin to separate from other elements */
+    padding: 10px; /* Add padding for spacing */
+    background-color:  #213b52; /* Set the background color */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+  }
+
+  /* Style for the negative sentence paragraph */
+  .negative-sentence-paragraph {
+    font-size: 16px; /* Set the font size */
+    line-height: 1.5; /* Set the line height for readability */
+    /* Set the text color */
+    margin: 0; /* Remove any margin to prevent extra spacing */
+  }
+
+/* Style for the paragraphs in the YouTube Sentiment Analysis Results section */
+#content p {
+  font-size: 16px; /* Set the font size */
+  line-height: 1.5; /* Set the line height for readability */
+  color: #E8FFF7; /* Set the text color */
+}
+
+	  </style>
+	  
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			
+			<span style="margin-left: 1.5rem; margin-top: 1rem;" class="text">Tech Creed</span>
+		</a>
+		<ul class="side-menu top">
+        
+            <li class="">
+                <a href="/dashboard">
+                    <i class='bx bxs-dashboard' ></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/today">
+                    <i class='bx bxs-shopping-bag-alt' ></i>
+                    <span class="text">Today News</span>
+                </a>
+            </li>
+            <li >
+                <a href="/epaper">
+                    <i class='bx bxs-doughnut-chart' ></i>
+                    <span class="text">E-paper News</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="/Utube">
+                    <i class='bx bxs-message-dots' ></i>
+                    <span class="text">Youtube News</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-group' ></i>
+                    <span class="text">Regional NewsCrawl</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-cog' ></i>
+                    <span class="text">Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="/" class="logout">
+                    <i class='bx bxs-log-out-circle' ></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+	
+	</section>
+	<!-- SIDEBAR -->
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			
+			<a href="#" class="profile"  style="display: flex;">
+				<img src="https://res.cloudinary.com/dlwfeyfiy/image/upload/v1694671086/TechcreedLogo.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<div class="card">
+		<div id="utube-cnt">
+			<h1>YouTube Sentiment Analysis</h1>
+			<form action="/analyze_youtube" method="post">
+				
+				<input style=" background-color: #2d302f18; color: #000;" placeholder="Enter YouTube Video URL:" type="text" id="youtube_url" name="youtube_url" required><br>
+				<button type="submit">Analyze</button>
+			</form>
+		</div>
+	</div>
+	
+		
+			<div class="result-container">
+			<h1>YouTube sentiment analysis results</h1>
+			<span class="result">
+			<p>Video Title :{{video_title}}</p>
+			<p>Positive: {{ neutral_percentage }}%</p>
+			<p>Negative: {{ negative_percentage }}%</p>
+			<p>Neutral: {{ positive_percentage }}%</p>
+        </span>
+    </div>
+        <div class="result-container">
+        <span class="result">
+            <p>Negative: {{ negative_percentage }}%</p>
+            <p>Negative timestamps:{{negative_timestamps_minutes}}</p>
+        </span>
+        </div>
+        <div class="result-container">
+        <span class="result">
+            <h1>Negative sentences</h1>
+            <div class="negative-sentence-container">
+            <p class="negative-sentence-paragraph" >{{negative_sentences}}</p>
+            </div>
+        </span>
+			</div>
+		
+
+		
+	</div>
+
+	</section>
+	<!-- CONTENT -->
+		
+	
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

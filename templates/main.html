@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TechCreed</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+  <!-- <link href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css">
+  <!-- Add this link tag to your HTML -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.15.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="{{ url_for('static', filename='css/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<!-- preloader --><div class="preloader">
+  <div class="jelly"></div>
+
+  <svg width="0" height="0" class="jelly-maker">
+    <defs>
+      <filter id="uib-jelly-ooze">
+        <feGaussianBlur
+          in="SourceGraphic"
+          stdDeviation="6.25"
+          result="blur"
+        />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+          result="ooze"
+        />
+        <feBlend in="SourceGraphic" in2="ooze" />
+      </filter>
+    </defs>
+  </svg>
+</div>
+<!-- end-preloader -->
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html"><img src="https://res.cloudinary.com/dlwfeyfiy/image/upload/v1694668291/LogoTechcreed_o4cfyp.jpg" style="width: 400px ; "></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#about">About Us</a></li>      
+          <li><a class="nav-link scrollto" href="#features">History</a></li>
+          <li><a class="getstarted scrollto" href="{{ url_for('signin') }}">Login Now </a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row d-flex align-items-center">
+      <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
+        <h2 class="techcreedhead">TechCreed</h2>
+        <h1 class="homeParatext">Experience The 360 Feedback System</h1>
+        <!-- <h2>We are team of talented designers making websites with Bootstrap</h2> -->
+        <a href="{{ url_for('signin') }}" class="btn-get-started scrollto btnhomepagesign">Get Started</a>
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+        <img src="{{ url_for('static', filename='img/hero-img.png') }}" class="img-fluid " alt="">
+      </div>
+    </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class=" section-bg">
+      <div class="section-title">
+        <h2 data-aos="fade-in">Applicable Translations</h2>
+        <div  class="row no-gutters clients-wrap clearfix wow fadeInUp">
+          <div  class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <!-- <img src="assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="flip-right"> --> 
+              <h1 class="img-fluid1">English</h1>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+             <h1 class="img-fluid1">Hindi</h1>
+              <!-- <img src="assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="100"> -->
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Urdu</h1>
+              <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200"> -->
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Tamil </h1>
+              <!-- <img src="assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="300"> -->
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Telugu</h1>
+              <!-- <img src="assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="400"> -->
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Kannada </h1>
+              <!-- <img src="assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="500"> -->
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Punjabi</h1>
+              <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200"> -->
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Gujarati</h1>
+              <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200"> -->
+            </div>
+          </div>  
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Marathi</h1>
+              <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200"> -->
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Malayalam</h1>
+              <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200"> -->
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Bengali</h1>
+              <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200"> -->
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div id="lang" class="client-logo">
+              <h1 class="img-fluid1">Assamese</h1>
+              <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200"> -->
+            </div>
+          </div>
+
+          <!-- Other language sections go here, following the same pattern -->
+
+        </div>
+      </div>
+    </section><!-- End Clients Section -->
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="image col-xl-5"></div>
+          <div class="col-xl-7">
+            <div class="content d-flex flex-column justify-content-center ps-0 ps-xl-4">
+              <h3 data-aos="fade-in" data-aos-delay="100">About us :</h3>
+              <p data-aos="fade-in" class="aboutUSpara">
+                Press Information Bureau (PIB) is the nodal agency of the Government of India to disseminate information to the print and electronic media on government policies, programmes, initiatives and achievements. 
+                <br> 
+                It functions as an interface between the government and media & also serves to provide feedback to the government on people’s reaction as reflected in the media.
+                <br>
+                PIB  information through different modes of communication viz. press releases& feature articles, photographs, videos and also through social media platforms. 
+                Information disseminated is released in English, Hindi & Urdu and subsequently translated in other Indian languages to reach out to about 8400 newspapers and media organisations in different parts of the country.
+                <br>
+                In addition, the PIB also organizes Press Conferences, Press Briefings, Interviews of the Ministers/Secretaries and other senior officers for sensitizing media persons on important policy initiatives of the Government. 
+                
+                 We welcome your feedback and inquiries, and we're dedicated to serving as your trusted source for government news.         
+                </p>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-aos="fade-in">Services</h2>
+          <p data-aos="fade-in">
+            PIB distributes government policies and achievements through various media outlets.
+            We facilitate communication between the government and the media, ensuring accurate reporting.
+          </div>
+        <div class="row">
+          <div class="col-md-6 d-flex" data-aos="fade-right">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='img/serviceWebcraw.png') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Media Crawling</a></h5>
+                <p class="card-text">
+                  News Crawling: Experience real-time news updates like never before. Our efficient news crawling service scours the 
+                  web's vast expanse, gathering breaking stories and in-depth reports from diverse sources.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex" data-aos="fade-left">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='img/serviceSentiment.png') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Sentiment Analysis</a></h5>
+                <p class="card-text">
+                  Text Sentiment Analysis: Our state-of-the-art technology performs sentiment analysis on textual data, 
+                  providing you with an in-depth understanding of the emotions and attitudes 
+                  expressed in content such as customer reviews, social media posts, and more.
+                  </div>
+            </div>
+    
+          </div>
+          <div class="col-md-6 d-flex" data-aos="fade-right">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='img/servicetextclassification.png') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Text Classification</a></h5>
+                <p class="card-text">
+                  Text Article Classification: Our cutting-edge text analysis technology categorizes articles with precision, making it easier to organize and retrieve relevant content.
+                  We streamline your content management by automatically classifying articles into predefined 
+                  categories or custom tags, ensuring content is organized for easy access.               
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex" data-aos="fade-left">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='img/serviceNotification.png') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Negative Notification</a></h5>
+                <p class="card-text">
+                  Negative Notification Service: Our negative notification system keeps you informed about critical issues and incidents in real-time.
+    
+                Instant Alerts Receive immediate notifications when negative events or anomalies occur, enabling you to take proactive measures to address concerns.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+    
+
+          <!-- Other service sections go here, following the same pattern -->
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    
+
+    <!-- ======= History Section ======= -->
+    <section id="history" class="features section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 data-aos="fade-in">History</h2>
+          <p data-aos="fade-in">
+            The history of Press Information Bureau can be traced back to the first World War Years, when a Central Publicity Board came into existence 
+            under the Home Member of the colonial Government. Later, a Cell was set up in the Home Department in June 1919 under Dr. L.F. Rushbrook Williams,
+             to prepare a yearly report on India, for presentation to the British Parliament.
+          </p>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img src="{{ url_for('static', filename='img/Histrory.png') }}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4" data-aos="fade-left">
+            <h3> Press Information Bureau :</h3>
+            <p class="fst-italic">
+              The functions of the Cell were amplified to provide and supervise “the distribution of correct information on all India questions” and to inform Departments of Government of
+               “particular questions on which public opinion is exercised and on which further information is needed”.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> To present material in the form required by the Press i.e. news stories.</li>
+              <li><i class="bi bi-check"></i> To provide an agency news service, reporting facts without comment.</li>
+              <li><i class="bi bi-check"></i> To exclude any material of a communal nature, and,</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section><!-- End History Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 data-aos="fade-in">Features</h2>
+          <p data-aos="fade-in">
+            Our website boasts real-time updates for timely information and a user-friendly interface for effortless navigation. Customize your experience, access advanced analytics, and enjoy 24/7 support for a seamless online experience.
+            </p>
+            </div>
+
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img style="margin-top: 3rem;" src="{{ url_for('static', filename='img/fastcheck.png') }}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4" data-aos="fade-left">
+            <h3> The objective of the Fact Check Unit :  </h3>
+            <p class="fst-italic">
+              The objective of the Fact Check Unit is to act as a deterrent to creators and disseminators of fake news & misinformation and to provide people with an easy avenue to report suspicious
+               and questionable information pertaining to the Government of India for fact-checking.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> Deterrence: Act as a deterrent against creators and spreaders of fake news & misinformation.</li>
+              <li><i class="bi bi-check"></i> Reporting Avenue: Provide a user-friendly channel for reporting suspicious or questionable information related to the Government of India.</li>
+              <li><i class="bi bi-check"></i> Fact-Checking: Ensure rigorous fact-checking to verify the accuracy of information.</li>
+              <li><i class="bi bi-check"></i> Transparency: Promote transparency and truth in government-related information dissemination.</li>
+              <li><i class="bi bi-check"></i> Combat Misinformation: Counteract the harmful effects of misinformation and protect public trust.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+      <div class="footer-top">
+
+        <div class="container">
+
+          <div class="row  justify-content-center">
+            <div class="col-lg-6">
+              <h3>Tech Creed</h3>
+              <p>If you have any queries, please enter your email to contact you by our team</p>
+            </div>
+          </div>
+
+          <div class="row footer-newsletter justify-content-center">
+            <div class="col-lg-6">
+              <form action="" method="post">
+                <input type="email" name="email"><input type="submit" value="Contact Us">
+              </form>
+            </div>
+          </div>
+
+          <!-- <div class="social-links">
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          </div> -->
+
+        </div>
+      </div>
+
+      <div class="container footer-bottom clearfix">
+        <div class="logo float-left">
+          <h1 class="text-light"><a href="#"><span>Tech Creed</span></a></h1>
+        </div>
+        <div class="float-right">
+          <p>Privacy Policy | Terms of Use</p>
+          <p>&copy; <span>2023 Tech Creed</span>. All Rights Reserved</p>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><h1>&uarr;</h1></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/glightbox.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/validate.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='js/swiper-bundle.min.js') }}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  </body>
+
+</html>

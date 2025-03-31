@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+ <style>
+    body {
+    background-color: #243b55;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    width: 80%;
+    margin-top: 70px; /* 90% width for the container */
+}
+
+.left-column {
+    flex: 1; /* Left column takes 1/2 of the container width */
+    background-image: url('../static/img/signup.jpg'); /* Add your image URL here */
+    background-size: contain; /* Adjust image size to fit within the column */
+    background-repeat: no-repeat;
+    background-position: center center; /* Center the image horizontally and vertically */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.right-column {
+    flex: 1; /* Right column takes 1/2 of the container width */
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #555;
+    display: block;
+    text-align: left;
+    margin-bottom: 7px;
+    margin-left: 65px;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc; /* Add a bottom border */
+    border-radius: 0; /* Remove border-radius */
+    margin-bottom: 17px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+
+}
+input:focus {
+    border-color: #286fea;
+}
+
+span {
+    color: #ff0000;
+    display: block;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 65px;
+
+}
+
+button {
+    width: 75%;
+    padding: 10px;
+    background-color: #286fea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Add border-color transition */
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3; /* Change button border color on hover */
+}
+
+.login-link {
+    font-size: 16px;
+    color: #2c8aed;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column"></div>
+        <div class="right-column">
+            <h1>Create an Account</h1>
+            <form action="/signup" method="POST" onsubmit="return validateForm()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <span id="usernameError" class="error"></span>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+                <span id="emailError" class="error"></span>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="passwordError" class="error"></span>
+
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                <span id="confirmPasswordError" class="error"></span>
+
+                <button type="submit">Sign Up</button>
+
+                <p>Already have an account? <a href="{{url_for('signin')}}" class="login-link">Login now</a></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            // Reset error messages
+            document.getElementById('usernameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('confirmPasswordError').textContent = '';
+
+            // Get input values
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            // Email validation using regular expression
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email address.';
+                return false;
+            }
+
+            // Validate username (example: at least 5 characters)
+            if (username.length < 5) {
+                document.getElementById('usernameError').textContent = 'Username must be at least 5 characters.';
+                return false;
+            }
+
+            // Validate password (example: at least 8 characters)
+            if (password.length < 8) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 8 characters.';
+                return false;
+            }
+
+            // Validate password confirmation
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+                return false;
+            }
+
+            // Form is valid
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Alkatra&family=Nunito:wght@300&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    top: 0;
+    font-family: 'Alegreya', serif;
+font-family: 'Alkatra', cursive;
+font-family: 'Nunito', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+   
+}
+body{
+    background-color:#151B23;
+}
+#navbar ul li a{
+    text-decoration: none;
+    letter-spacing: 0.5px;
+
+    
+}
+#navbar ul li{
+    display: inline-block;
+    padding-left: 3rem;
+    font-weight: 650;
+    font-size: 23px;
+    color: #E8FFF7;
+    
+}
+
+#navbar{
+    float: right;
+    margin-right: 6rem;
+    margin-top: 3.2rem;
+}
+
+.tc-name{
+    color: #E8FFF7;
+    font-size: 23px;
+    margin-top: 7.5rem;
+    margin-left: 9rem;
+    position: absolute;
+    border-left:solid #5b59596a;
+    padding-left: 5px;   
+    letter-spacing: 0.5px;
+}
+
+.cnt{
+    font-size: 40px;
+    margin-top: 15rem;
+    position: absolute;
+    margin-left: 6rem;
+    line-height: 5rem;
+    letter-spacing: 5px;
+    color: #F3A94D;
+}
+
+.img{
+    height: 215px;
+   margin-top: -6rem;
+    margin-left: 90rem;
+    animation: float 4s ease-out infinite;
+    object-fit: cover;
+}
+
+.login-btn{
+    font-size: 17px;
+    background-color: black;
+    border: solid none;
+    border-radius: 25px;
+    color: #E8FFF7;
+    letter-spacing: 1.6px;
+    padding: 15px 45px;
+    font-weight: 600;
+    cursor: pointer;  
+}
+
+.login-btn:hover{
+    background-color: #F3A94D;
+    color: #151B23;
+    transition: 0.5s;
+    cursor: pointer;
+ 
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #E8FFF7;
+}
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+@keyframes float {
+    50% {
+    transform: translate(0, 20px);
+    }
+}
+
+.underline-hover-effect {
+    display: inline-block;
+    padding-bottom: 0.35rem; /* defines the space between text and underline */
+    position: relative;
+  }
+  
+  .underline-hover-effect::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.25s ease-out;
+    
+  }
+  .underline-hover-effect:hover::before {
+    width: 100%;
+  }
+
+
+.underline-hover-effect:hover{
+    color: #F3A94D;
+    transition: 0.25s;
+}

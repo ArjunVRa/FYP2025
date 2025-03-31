@@ -1,0 +1,20 @@
+:root {
+	--poppins: 'Poppins', sans-serif;
+	--lato: 'Lato', sans-serif;
+
+	--light: #161b21;
+	--blue: gold;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	--dark-grey: #AAAAAA;
+	--dark: gold;
+	--red: #DB504A;
+	--yellow: #FFCE26;
+	--light-yellow: #FFF2C6;
+	--orange: #FD7238;
+	--light-orange: #FFE0D3;
+	--yellow1:#F3A94D;
+	--yellow2:#fff;
+	--yellow3:#f59520;
+	--blue1:#151B23;
+}

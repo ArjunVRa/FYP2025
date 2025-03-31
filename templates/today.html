@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<title>Tech Creed</title>
+    <style>
+        #date{
+            padding: 5px;
+            text-align: center;
+        }
+        #headd{
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			
+			<span style="margin-left: 1.5rem; margin-top: 1rem;" class="text">Tech Creed</span>
+		</a>
+		<ul class="side-menu top">
+        
+            <li class="">
+                <a href="/dashboard">
+                    <i class='bx bxs-dashboard' ></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="/today">
+                    <i class='bx bxs-shopping-bag-alt' ></i>
+                    <span class="text">Today News</span>
+                </a>
+            </li>
+            <li >
+                <a href="/epaper">
+                    <i class='bx bxs-doughnut-chart' ></i>
+                    <span class="text">E-paper News</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Utube">
+                    <i class='bx bxs-message-dots' ></i>
+                    <span class="text">Youtube News</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-group' ></i>
+                    <span class="text">Regional NewsCrawl</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <!-- <li>
+                <a href="#">
+                    <i class='bx bxs-cog' ></i>
+                    <span class="text">Settings</span>
+                </a>
+            </li> -->
+            <li>
+                <a href="/" class="logout">
+                    <i class='bx bxs-log-out-circle' ></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+	</section>
+	<!-- SIDEBAR -->
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav >
+			<i class='bx bx-menu'></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+		
+			<a href="#" class="profile">
+				<img src="https://res.cloudinary.com/dlwfeyfiy/image/upload/v1694671086/TechcreedLogo.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+       
+    
+		<!-- MAIN -->
+        <h2 id="headd">Today's Press release</h2>
+        <p id="date"></p>
+		<iframe width="1200" height="1600" style="margin-left: 2rem;" src="https://rss.app/embed/v1/wall/s1FQlVQLxYGZMZke" frameborder="0"></iframe>
+        
+    </section>
+	<!-- CONTENT -->
+	
+    <script>
+            function updateDate() {
+            const dateElement = document.getElementById("date");
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth() + 1; // Month is zero-based
+            const day = currentDate.getDate();
+            const formattedDate = `${day < 10 ? '0' : ''}${day}-${month < 10 ? '0' : ''}${month}-${year}`;
+            dateElement.textContent = formattedDate;
+        }
+
+        // Call the updateDate function to display the date immediately
+        updateDate();
+    </script>
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

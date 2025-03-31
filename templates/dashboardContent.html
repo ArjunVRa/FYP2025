@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	
+	<!-- My CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<title>Tech Creed</title>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+        }
+
+        .history{
+            margin: 30px;
+        }
+        
+        h1 {
+            margin-left: -17rem;
+			font-size: 35px;
+            margin-top: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            
+            margin: 20px;
+        }
+
+		a{
+			text-decoration: none;
+		}
+        .nav-item :active{
+            color: gold;
+            background-color: #151B23;
+        }
+		.card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: 300px; /* Adjust the card width as needed */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+			text-align: center;
+        }
+
+        .card-text {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+		.view-btn {
+    display: inline-block;
+    padding: 7px ;
+    background-color: #007bff; /* Change the background color to your desired color */
+    color: #fff; /* Change the text color to contrast with the background color */
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+	text-align: center; /* Add a smooth transition effect */
+  }
+
+  .view-btn:hover {
+    background-color: #0056b3; /* Change the background color when hovered */
+  }
+
+        .tonality {
+            display: none;
+            margin-top: 10px;
+        }
+
+		/* Add CSS styles for YouTube analysis history cards */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Card background color */
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+#ccard {
+            background-color:#fff;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 20px;
+            color: #213b52;
+            text-align: center;
+        }
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tonality {
+    padding: 10px;
+    background-color: #f0f0f0; /* Background color for tonality details */
+}
+
+/* Style for the expanded tonality */
+.tonality.expanded {
+    display: block;
+}
+
+
+
+
+
+	</style>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			
+			<span style="margin-left: 1.5rem; margin-top: 1rem;" class="text">Tech Creed</span>
+		</a>
+		<ul class="side-menu top">
+        
+            <li class="active">
+                <a href="/dashboard">
+                    <i class='bx bxs-dashboard' ></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/today">
+                    <i class='bx bxs-shopping-bag-alt' ></i>
+                    <span class="text">Today News</span>
+                </a>
+            </li>
+            <li >
+                <a href="/epaper">
+                    <i class='bx bxs-doughnut-chart' ></i>
+                    <span class="text">E-paper News</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Utube">
+                    <i class='bx bxs-message-dots' ></i>
+                    <span class="text">Youtube News</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-group' ></i>
+                    <span class="text">Regional NewsCrawl</span>
+                </a>
+            </li>
+        </ul>
+		<ul class="side-menu">
+			<!-- <li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li> -->
+			<li>
+				<a href="/" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			
+			<a href="#" class="profile">
+				<img src="https://res.cloudinary.com/dlwfeyfiy/image/upload/v1694671086/TechcreedLogo.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+        <div id="ccard" style="background-color:#f8f8f8; height: 80vh;">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item" role="presentation">
+			  <button class="nav-link  active"  id="home-tab" data-bs-toggle="tab"  data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Epaper history</button>
+			</li>
+			<li class="nav-item" role="presentation">
+			  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Youtube crawler history</button>
+			</li>
+			
+			
+		  </ul>
+		  <div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+				<!-- Dashboard Content -->
+<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+    <section id="content">
+        <h1 >E-paper Sentiment Analysis History</h1>
+        <div class="container">
+            <!-- Loop through sentiment history and create a card for each result -->
+		<!-- Loop through sentiment history and create a card for each result -->
+{% for sentiment_result in sentiment_history %}
+<div class="card">
+    <h2 class="card-title">PDF: {{ sentiment_result.pdf_name }}</h2>
+    <a href="#" class="view-btn" onclick="toggleTonality({{ loop.index }})">View Tonality</a>
+    <div class="tonality" id="tonality_{{ loop.index }}">
+        <p class="card-text">Positive Sentiment: {{ sentiment_result.positive }}%</p>
+        <p class="card-text" style="color: red;">Negative Sentiment: {{ sentiment_result.negative }}%</p>
+        <p class="card-text">Neutral Sentiment: {{ sentiment_result.neutral }}%</p>
+		
+    </div>
+</div>
+{% endfor %}
+        </div>
+    </section>
+</div>
+
+			</div>
+			<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+				<!-- Existing code for displaying epaper sentiment analysis history -->
+
+<!-- Add a section for YouTube sentiment analysis history -->
+<h2 style="text-align: center; margin-top: 1rem;">YouTube Sentiment Analysis History</h2>
+<div class="container">
+    <!-- Loop through YouTube sentiment history and create a card for each result -->
+    {% for youtube_result in youtube_sentiment_history %}
+    <div class="card">
+        <h2 class="card-title">Video Title: {{ youtube_result.video_title }}</h2>
+        <a href="#" class="view-btn" onclick="toggleTonality({{ loop.index }})">View Tonality</a>
+        <div class="tonality" id="tonality_youtube_{{ loop.index }}">
+            <p class="card-text">Positive Sentiment: {{ youtube_result.positive_percentage }}%</p>
+            <p class="card-text" style="color: red;">Negative Sentiment: {{ youtube_result.negative_percentage }}%</p>
+            <p class="card-text">Neutral Sentiment: {{ youtube_result.neutral_percentage }}%</p>
+            <p class="card-text">Negative Timestamps (Minutes): {{ youtube_result.negative_timestamps_minutes | join(', ') }}</p>
+            <p class="card-text">Negative Sentences:</p>
+            <ul>
+                {% for sentence in youtube_result.negative_sentences %}
+                <li>{{ sentence }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+			<div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+			
+		  </div>
+        </div>
+		
+		<!-- End MAIN -->
+	</section>
+	<!-- CONTENT -->
+	<script>
+        // JavaScript function to toggle the tonality display
+     
+        function toggleTonality(index) {
+    const tonalityDiv = document.getElementById(`tonality_${index}`);
+    const tonalityElements = document.querySelectorAll(".tonality");
+
+    tonalityElements.forEach((element, i) => {
+        if (i + 1 === index) {
+            // Toggle the tonality for the clicked card
+            element.classList.toggle("expanded");
+        } else {
+            // Close tonality for other cards
+            element.classList.remove("expanded");
+        }
+    });
+}
+
+
+
+    </script>
+	
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Tech Creed</title>
+</head>
+<body>
+    <style>
+         .card {
+            background-color:#FFFAFA;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            color: #213b52;
+            text-align: center;
+        }
+
+        .negative-sentence-container {
+    max-height: 190px; /* Adjust the maximum height as needed */
+    overflow: auto; /* Add scroll when content exceeds the maximum height */
+    margin-top: 10px; /* Add margin to separate from other elements */
+    padding: 10px; /* Add padding for spacing */
+    background-color:  #213b52; /* Set the background color */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px;
+   /* Add border radius for rounded corners */
+  }
+
+  /* Style for the negative sentence paragraph */
+  .negative-sentence-paragraph {
+    font-size: 16px; /* Set the font size */
+    line-height: 1.2; /* Set the line height for readability */
+    color: #E8FFF7; /* Set the text color */
+    margin: 0; /* Remove any margin to prevent extra spacing */
+  }
+
+        /* Style for the form within the card */
+        .card form {
+            margin-top: 20px;
+        }
+        .card .input {
+            padding: 18px;
+            border: dashed #213b52;
+            border-radius: 5px;
+            background-color: #3b3d3c18;
+            margin-bottom: 1.5rem;
+        }
+        .card .input:hover {
+            background-color: #e8fff754;
+            cursor: pointer;
+        }
+        .card .btn {
+            background-color: #F3A94D;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            align-items: center;
+        }
+        .upload-h1 {
+            font-size: 30px;
+            letter-spacing: 1.5px;
+        }
+
+        /* Style for the result container */
+        .result-container {
+            background-color: #213b52;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 500px;
+            margin: 20px auto;
+            color: #E8FFF7;
+            white-space: pre-line; /* Preserve line breaks */
+        }
+
+        /* Style for the result paragraphs */
+        .result-container p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+    
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <span class="text">Tech Creed</span>
+        </a>
+        <ul class="side-menu top">
+        
+            <li class="">
+                <a href="/dashboard">
+                    <i class="bx bxs-dashboard" ></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/today">
+                    <i class="bx bxs-shopping-bag-alt" ></i>
+                    <span class="text">Today News</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="/epaper">
+                    <i class="bx bxs-doughnut-chart" ></i>
+                    <span class="text">E-paper News</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Utube">
+                    <i class="bx bxs-message-dots" ></i>
+                    <span class="text">Youtube News</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-group" ></i>
+                    <span class="text">Regional NewsCrawl</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#">
+                    <i class="bx bxs-cog" ></i>
+                    <span class="text">Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="logout">
+                    <i class="bx bxs-log-out-circle" ></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- SIDEBAR -->
+    <!-- CONTENT -->
+    <section id="content">
+        <!-- NAVBAR -->
+        <nav>
+            <i class="bx bx-menu"  id="sidebar"></i>
+            <a href="#" class="nav-link">Categories</a>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button type="submit" class="search-btn"></button>
+                </div>
+            </form>
+            <!-- <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode"></label>
+            <a href="#" class="notification">
+                <i class='bx bxs-bell' ></i>
+                <span class="num">8</span>
+            </a> -->
+            <a href="#" class="profile">
+                <img src="https://res.cloudinary.com/dlwfeyfiy/image/upload/v1694671086/TechcreedLogo.png">
+            </a>
+        </nav>
+        <!-- NAVBAR -->
+
+        <!-- MAIN -->
+        <div class="card">
+            <h1 class="upload-h1">Upload a PDF File</h1>
+            <!-- Modify your form action to POST the file to /upload_and_analyze -->
+            <form method="POST" enctype="multipart/form-data" action="/upload_and_analyze">
+                <input type="file" class="input" name="file" accept=".pdf"><br>
+                <input class="btn" type="submit" value="Upload and Process">
+            </form>
+        </div>
+
+        <div class="result-container">
+            <h1>E-paper sentiment analysis results</h1>
+            <p>Positive Sentiment: {{ positive }}%</p>
+            <p >Negative Sentiment:  <span style="color: red;">{{ negative }}</span>% </p>
+            <p>Neutral Sentiment: {{ neutral }}%</p>
+            </div>
+              <div class="result-container">
+            <p style="margin-bottom: -2rem; margin-top: -1rem; color: red;">Negative Sentences:</p>
+            <!-- Loop through negative_sentences and display each sentence in a separate paragraph -->
+            <div class="negative-sentence-container">
+            {% for sentence in negative_sentences %}
+                <p  class="negative-sentence-paragraph" style="padding-top: -1rem;" >{{ sentence }}</p>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- CONTENT -->
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
